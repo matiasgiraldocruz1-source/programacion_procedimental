@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventario</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+}
+
+.container{
+  background: rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:15px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  box-shadow:0 0 20px rgba(0,255,255,0.5);
+  text-align:center;
+}
+
+h1{
+  text-align:center;
+}
+
+input{
+  padding:10px;
+  width:100%;
+  max-width:250px;
+  border:none;
+  border-radius:5px;
+  text-align:center;
+}
+
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:5px;
+  background:#00ffff;
+  color:black;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.mensaje{
+  margin-top:20px;
+  padding:15px;
+  border-radius:10px;
+  background: rgba(0,0,0,0.6);
+  border:2px solid #00ffff;
+  box-shadow:0 0 15px #00ffff;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Gestión de Inventario</h1>
+
+  <input type="text" id="marca" placeholder="Marca del producto">
+  <input type="text" id="nombre" placeholder="Nombre del producto">
+  <input type="text" id="codigo" placeholder="Código del producto">
+  <input type="number" id="cantidad" placeholder="Cantidad">
+
+  <button onclick="registrar()">Registrar</button>
+
+  <div id="resultado"></div>
+</div>
+
+<script>
+function registrar(){
+  let marca = document.getElementById('marca').value;
+  let nombre = document.getElementById('nombre').value;
+  let codigo = document.getElementById('codigo').value;
+  let cantidad = document.getElementById('cantidad').value;
+
+  if(marca && nombre && codigo && cantidad){
+    document.getElementById('resultado').innerHTML = `
+      <div class="mensaje">
+        🧔 Producto registrado<br><br>
+        <strong>Marca:</strong> ${marca}<br>
+        <strong>Nombre:</strong> ${nombre}<br>
+        <strong>Código:</strong> ${codigo}<br>
+        <strong>Cantidad:</strong> ${cantidad}
+      </div>
+    `;
+  }
+}
+</script>
+
+</body>
+</html>

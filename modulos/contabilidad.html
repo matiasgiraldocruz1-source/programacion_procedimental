@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contabilidad</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+<link rel="stylesheet" href="../css/contabilidad.css">
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <div class="titulo">
+      Sistema de Contabilidad
+    </div>
+
+    <div class="contenido">
+
+      <div class="lado-izquierdo">
+
+        <div class="circulo">
+          📊
+        </div>
+
+        <div class="mensaje">
+          Registro básico de ingresos y egresos del sistema contable.
+        </div>
+
+      </div>
+
+      <div class="formulario">
+
+        <div class="field">
+          <label class="label">Ventas</label>
+          <div class="control">
+            <input class="input" type="text" id="ventas" placeholder="Ingrese ventas">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Fecha</label>
+          <div class="control">
+            <input class="input" type="date" id="fecha" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Ingresos</label>
+          <div class="control">
+            <input class="input" type="number" id="ingresos" placeholder="Ingrese ingresos">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Egresos</label>
+          <div class="control">
+            <input class="input" type="number" id="egresos" placeholder="Ingrese egresos">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Concepto</label>
+          <div class="control">
+            <input class="input" type="text" id="concepto" placeholder="Ingrese concepto">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Valor</label>
+          <div class="control">
+            <input class="input" type="number" id="valor" placeholder="Ingrese valor">
+          </div>
+        </div>
+
+        <button class="button is-info" onclick="guardarDatos()">
+          Guardar Registro
+        </button>
+
+        <div id="resultado"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<script src="../js/contabilidad.js"></script>
+</body>
+</html>
+
