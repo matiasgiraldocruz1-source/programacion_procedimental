@@ -1,1 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+  />
+  <link rel="stylesheet" href="../css/pedidos.css">
+  <title>Pedidos Restaurante</title>
+</head>
+
+<body>
+
+  <div class="container mt-6">
+
+    <div class="columns is-centered">
+
+      <div class="column is-6">
+
+        <div class="box">
+
+          <h1 class="title has-text-centered">
+            Registro de Pedidos
+          </h1>
+
+          <div class="field">
+            <label class="label">Nombre del Cliente</label>
+            <div class="control">
+              <input 
+                class="input" 
+                type="text" 
+                id="cliente" 
+                placeholder="Ingrese nombre del cliente"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Mesa</label>
+            <div class="control">
+              <input 
+                class="input" 
+                type="number" 
+                id="mesa" 
+                placeholder="Ingrese número de mesa"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Comida</label>
+            <div class="control">
+              <input 
+                class="input" 
+                type="text" 
+                id="comida" 
+                placeholder="Ingrese el pedido"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Cantidad</label>
+            <div class="control">
+              <input 
+                class="input" 
+                type="number" 
+                id="cantidad" 
+                placeholder="Ingrese cantidad"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Bebida</label>
+            <div class="control">
+              <input 
+                class="input" 
+                type="text" 
+                id="bebida" 
+                placeholder="Ingrese bebida"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Total</label>
+            <div class="control">
+              <input 
+                class="input" 
+                type="number" 
+                id="total" 
+                placeholder="Ingrese total"
+              >
+            </div>
+          </div>
+
+          <button 
+            class="button is-primary is-fullwidth"
+            onclick="guardarPedido()"
+          >
+            Guardar Pedido
+          </button>
+
+          <div id="resultado" class="mt-4"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<script>
+
+function guardarPedido() {
+
+  let cliente = document.getElementById("cliente").value;
+  let mesa = document.getElementById("mesa").value;
+  let comida = document.getElementById("comida").value;
+  let cantidad = document.getElementById("cantidad").value;
+  let bebida = document.getElementById("bebida").value;
+  let total = document.getElementById("total").value;
+
+  document.getElementById("resultado").innerHTML = `
+  
+    <div class="notification is-success mt-4">
+      <strong>Pedido Guardado</strong><br><br>
+
+      Cliente: ${cliente} <br>
+      Mesa: ${mesa} <br>
+      Comida: ${comida} <br>
+      Cantidad: ${cantidad} <br>
+      Bebida: ${bebida} <br>
+      Total: $${total}
+
+    </div>
+
+  `;
+}
+
+</script>
+
+</body>
+</html>
